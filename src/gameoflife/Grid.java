@@ -10,7 +10,19 @@ public class Grid {
     GraphicalInterface g = new GraphicalInterface();
     Scanner in = new Scanner(System.in);
 
-    public Grid() {
+    public Grid() throws InterruptedException {
+        createGrid(30, 30);
+        Thread.sleep(2000);      
+    }
+    /**
+     * runs the game. the program will stop upon closing the gui
+     * @throws InterruptedException
+     */
+    public void runGame() throws InterruptedException{
+        while (true) {
+            lifeCheck();
+            Thread.sleep(200);
+        }
     }
 
     /**
